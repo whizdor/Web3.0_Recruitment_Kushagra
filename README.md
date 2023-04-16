@@ -1,6 +1,6 @@
 # Web3.0_Recruitment_Kushagra
 
-##Task :
+## Task
 
 The task requires you to create a Car class in a programming language of your choice, with collision detection and time-to-collision calculation implemented using coordinates and speeds. The class should have the following attributes and methods:
 
