@@ -7,9 +7,9 @@ The task requires you to create a Car class in a programming language of your ch
 
 Attributes:
 > >make (string): The make of the car (e.g., Hyundai, Maruti, BMW)
-> model (string): The model of the car (e.g., Alto, Creta, City)
-> year (int): The year the car was made
-> speed (int): The current speed of the car in miles per hour
+> >model (string): The model of the car (e.g., Alto, Creta, City)
+> >year (int): The year the car was made
+> >speed (int): The current speed of the car in miles per hour
 > x (int): The x-coordinate of the car
 > y (int): The y-coordinate of the car
 
