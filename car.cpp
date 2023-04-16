@@ -42,11 +42,11 @@ class Car
         y += speed_y*time;
         z += speed_z*time - 5*time*time;
 
-        //Since, the car is moving, I'll take gravity into account.
+        //Since, the car is flying, I'll take gravity into account.
         speed_z -= 10*time;
     }
 
-    //omfg a crash!
+    //Ah crash!
     bool detect_collision(Car second)
     {
         if(second.x == x && second.y == y && second.z == z) return true;
@@ -80,36 +80,58 @@ class Car
         return -1;
         //Program returns a -1 if the collison is never possible.
     }
+
+    //Function to print the Position and Velocity of the Car.
+    void print_status()
+    {
+        cout << "Velocity is : " << speed_x << " , " << speed_y<< " , "<< speed_z << " in mph" << endl;
+        cout << "Position is : " << x << " , " << y<< " , "<< z << " in miles"<< endl;
+    }
 };
 
 signed main()
 {
     Car car1;
-    Car car2;
-
     car1.make = "Honda";
-    car1.x = 2;
-    car1.y = 3;
-    car1.z = 4;
+    car1.model = "City";
+    car1.year = 2020;
+    car1.x = 200;
+    car1.y = 300;
+    car1.z = 400;
+    car1.speed_x = 80;
+    car1.speed_y = 90;
+    car1.speed_z = 80;
 
-    car1.speed_x = 2;
-    car1.speed_y = 2;
-    car1.speed_z = 2;
-    
-    car2.x = 8;
-    car2.y = 9;
-    car2.z = 10;
-    
-    car2.speed_x = 0;
-    car2.speed_y = 1;
-    car2.speed_z = 0;
+    Car car2;
+    car1.make = "Porshe";
+    car1.model = "Cayenne";  
+    car2.x = 800;
+    car2.y = 900;
+    car2.z = 1000;
+    car2.speed_x = 60;
+    car2.speed_y = 60;
+    car2.speed_z = 60;
 
-    car2.accelerate(1,0,1);
-    
+    car1.print_status();
+    car2.print_status();
+
+    car2.accelerate(0,10,0);
+    car2.move(2);
+    car1.move(2);
+
+
+    car1.print_status();
+    car2.print_status();
+
     int temp = car1.time_to_collsion(car2);
 
     if(temp != -1)
     {
-        cout << temp << endl;
+        cout << "Collison Occours at ";
+        cout << temp << " hours" << endl;
+    }
+    else
+    {
+        cout << "No Collision Occours" << endl;
     }
 }
